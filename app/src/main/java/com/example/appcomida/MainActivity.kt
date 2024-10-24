@@ -8,10 +8,12 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.appcomida.ui.theme.AppcomidaTheme
@@ -26,8 +28,7 @@ class MainActivity : ComponentActivity() {
             AppcomidaTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
-                        name = "Kawan",
-                        modifier = Modifier.padding(innerPadding)
+                        name = "Kawan", modifier = Modifier.padding(innerPadding)
                     )
                 }
             }
@@ -39,17 +40,23 @@ class MainActivity : ComponentActivity() {
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Column {
         Text(
-            text = "Hello aaaaa $name!",
-            modifier = modifier,
-            color = Cinzatest
-            
+            text = "Roleta de Comida", modifier = modifier, color = Cinzatest
+
         )
+
         Image(painter = painterResource(id = R.drawable.burguer), contentDescription = "burguer")
-        Text(
-            text = "Kawaninho test",
-            modifier = modifier,
-            color = Cinzatest
-        )
+
+        Button(onClick = { chooseImage(1) }) {
+            Text(text = "Gire", color = Color.White)
+        }
+
+
+    }
+}
+
+fun chooseImage(n: Int) {
+    when(n) {
+        1 -> "aparece hamburguer"
     }
 }
 
