@@ -46,7 +46,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         )
         Image(painter = painterResource(id = R.drawable.burguer), contentDescription = "burguer")
         Text(
-            text = "Luquinhas test",
+            text = "Kawan test",
             modifier = modifier,
             color = Cinzatest
         )
