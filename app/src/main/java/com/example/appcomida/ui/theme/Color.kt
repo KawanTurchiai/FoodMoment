@@ -11,3 +11,10 @@ val PurpleGrey40 = Color(0xFF625b71)
 val Pink40 = Color(0xFF7D5260)
 val Cinzatest = Color(0xFF666666)
 val white = Color(0xFFFFFFFF)
+
+val LightBackground = Color(0xFFFFFAF0) // Off-white (Fundo)
+val PrimaryAccent = Color(0xFFFF7043) // Coral / Tomate
+val DarkText = Color(0xFF3E2723) // Marrom escuro (Texto)
+val SecondaryText = Color(0xFF607D8B) // Cinza-azulado
+val SupportColor = Color(0xFF81C784) // Verde claro
+val SecondaryBackground = Color(0xFFFFEBEE) // Rosa claro
