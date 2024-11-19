@@ -73,11 +73,11 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 
             Button(
                 onClick = { sorteio.value = Random.nextInt(1, 9) },
-                modifier = Modifier.padding(top = 32.dp).size(width = 150.dp, height = 50.dp)
+                modifier = Modifier.padding(top = 20.dp).size(width = 120.dp, height = 40.dp)
             ) {
                 Text(text = "Gire",
                     color = Color.White,
-                    fontSize = 20.sp
+                    fontSize = 15.sp
 
                 )
 
@@ -117,54 +117,54 @@ fun ChooseImage(sorteio: androidx.compose.runtime.MutableState<Int>) {
                 Image(
                     painter = painterResource(R.drawable.hamburguer),
                     contentDescription = "Hamburguer",
-                    modifier = Modifier.size(150.dp)
+                    modifier = Modifier.size(200.dp)
                 )
-                Text("Hamburguer", fontSize = 20.sp)
+                Text("Hamburguer", fontSize = 15.sp)
             }
 
             4 -> {
                 Image(
                     painter = painterResource(R.drawable.lasanha),
                     contentDescription = "Lasanha",
-                    modifier = Modifier.size(150.dp)
+                    modifier = Modifier.size(200.dp)
                 )
-                Text("Lasanha", fontSize = 12.sp)
+                Text("Lasanha", fontSize = 15.sp)
             }
 
             5 -> {
                 Image(
                     painter = painterResource(R.drawable.pastel),
                     contentDescription = "Pastel",
-                    modifier = Modifier.size(150.dp)
+                    modifier = Modifier.size(200.dp)
                 )
-                Text("Pastel", fontSize = 20.sp)
+                Text("Pastel", fontSize = 15.sp)
             }
 
             6 -> {
                 Image(
                     painter = painterResource(R.drawable.pizza),
                     contentDescription = "Pizza",
-                    modifier = Modifier.size(150.dp)
+                    modifier = Modifier.size(200.dp)
                 )
-                Text("Pizza", fontSize = 20.sp)
+                Text("Pizza", fontSize = 15.sp)
             }
 
             7 -> {
                 Image(
                     painter = painterResource(R.drawable.tapioca),
                     contentDescription = "Tapioca",
-                    modifier = Modifier.size(150.dp)
+                    modifier = Modifier.size(200.dp)
                 )
-                Text("Tapioca", fontSize = 20.sp)
+                Text("Tapioca", fontSize = 15.sp)
             }
 
             8 -> {
                 Image(
                     painter = painterResource(R.drawable.temaki),
                     contentDescription = "Temaki",
-                    modifier = Modifier.size(150.dp)
+                    modifier = Modifier.size(200.dp)
                 )
-                Text("Temaki", fontSize = 20.sp)
+                Text("Temaki", fontSize = 15.sp)
             }
         }
     }
