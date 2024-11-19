@@ -45,11 +45,11 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         Text(
             text = "Roleta de Comida",
 
-            fontSize = 28.sp,
+            fontSize = 20.sp,
             fontWeight = FontWeight.Black,
             modifier = Modifier
                 .align(Alignment.TopCenter)
-                .padding(top = 50.dp)
+                .padding(top = 30.dp)
         )
 
 
@@ -64,7 +64,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
             Image(
                 painter = painterResource(R.drawable.seta),
                 contentDescription = "seta",
-                modifier = Modifier.size(60.dp),
+                modifier = Modifier.size(40.dp),
 
 
             )
@@ -99,25 +99,25 @@ fun ChooseImage(sorteio: androidx.compose.runtime.MutableState<Int>) {
                 Image(
                     painter = painterResource(R.drawable.cachorroquente),
                     contentDescription = "Cachorro Quente",
-                    modifier = Modifier.size(280.dp)
+                    modifier = Modifier.size(200.dp)
                 )
-                Text("Cachorro Quente", fontSize = 20.sp)
+                Text("Cachorro Quente", fontSize = 15.sp)
             }
 
             2 -> {
                 Image(
                     painter = painterResource(R.drawable.churrasco),
                     contentDescription = "Churrasco",
-                    modifier = Modifier.size(280.dp)
+                    modifier = Modifier.size(200.dp)
                 )
-                Text("Churrasco", fontSize = 20.sp)
+                Text("Churrasco", fontSize = 15.sp)
             }
 
             3 -> {
                 Image(
                     painter = painterResource(R.drawable.hamburguer),
                     contentDescription = "Hamburguer",
-                    modifier = Modifier.size(280.dp)
+                    modifier = Modifier.size(150.dp)
                 )
                 Text("Hamburguer", fontSize = 20.sp)
             }
@@ -126,16 +126,16 @@ fun ChooseImage(sorteio: androidx.compose.runtime.MutableState<Int>) {
                 Image(
                     painter = painterResource(R.drawable.lasanha),
                     contentDescription = "Lasanha",
-                    modifier = Modifier.size(280.dp)
+                    modifier = Modifier.size(150.dp)
                 )
-                Text("Lasanha", fontSize = 20.sp)
+                Text("Lasanha", fontSize = 12.sp)
             }
 
             5 -> {
                 Image(
                     painter = painterResource(R.drawable.pastel),
                     contentDescription = "Pastel",
-                    modifier = Modifier.size(280.dp)
+                    modifier = Modifier.size(150.dp)
                 )
                 Text("Pastel", fontSize = 20.sp)
             }
@@ -144,7 +144,7 @@ fun ChooseImage(sorteio: androidx.compose.runtime.MutableState<Int>) {
                 Image(
                     painter = painterResource(R.drawable.pizza),
                     contentDescription = "Pizza",
-                    modifier = Modifier.size(280.dp)
+                    modifier = Modifier.size(150.dp)
                 )
                 Text("Pizza", fontSize = 20.sp)
             }
@@ -153,7 +153,7 @@ fun ChooseImage(sorteio: androidx.compose.runtime.MutableState<Int>) {
                 Image(
                     painter = painterResource(R.drawable.tapioca),
                     contentDescription = "Tapioca",
-                    modifier = Modifier.size(280.dp)
+                    modifier = Modifier.size(150.dp)
                 )
                 Text("Tapioca", fontSize = 20.sp)
             }
@@ -162,7 +162,7 @@ fun ChooseImage(sorteio: androidx.compose.runtime.MutableState<Int>) {
                 Image(
                     painter = painterResource(R.drawable.temaki),
                     contentDescription = "Temaki",
-                    modifier = Modifier.size(280.dp)
+                    modifier = Modifier.size(150.dp)
                 )
                 Text("Temaki", fontSize = 20.sp)
             }
