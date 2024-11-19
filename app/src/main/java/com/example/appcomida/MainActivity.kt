@@ -44,30 +44,43 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     Box(modifier = modifier.fillMaxSize()) {
         Text(
             text = "Roleta de Comida",
-            fontSize = 24.sp,
+
+            fontSize = 28.sp,
             fontWeight = FontWeight.Black,
             modifier = Modifier
                 .align(Alignment.TopCenter)
                 .padding(top = 50.dp)
         )
 
-        // Centralizar o restante do conteúdo
+
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(top = 10.dp), // Ajuste para garantir espaço do título
+                .padding(top = 10.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            // Exibição da imagem e nome do prato
+
+            Image(
+                painter = painterResource(R.drawable.seta),
+                contentDescription = "seta",
+                modifier = Modifier.size(60.dp),
+
+
+            )
             ChooseImage(sorteio)
 
-            // Botão para girar a roleta
+
             Button(
                 onClick = { sorteio.value = Random.nextInt(1, 9) },
-                modifier = Modifier.padding(top = 24.dp)
+                modifier = Modifier.padding(top = 32.dp).size(width = 150.dp, height = 50.dp)
             ) {
-                Text(text = "Gire", color = Color.White)
+                Text(text = "Gire",
+                    color = Color.White,
+                    fontSize = 20.sp
+
+                )
+
             }
         }
     }
@@ -75,18 +88,18 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 
 @Composable
 fun ChooseImage(sorteio: androidx.compose.runtime.MutableState<Int>) {
-    // Usando Column para empilhar imagem e texto
+
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
-        modifier = Modifier.padding(16.dp)
+        modifier = Modifier.padding(2.dp)
     ) {
         when (sorteio.value) {
             1 -> {
                 Image(
                     painter = painterResource(R.drawable.cachorroquente),
                     contentDescription = "Cachorro Quente",
-                    modifier = Modifier.size(300.dp)
+                    modifier = Modifier.size(280.dp)
                 )
                 Text("Cachorro Quente", fontSize = 20.sp)
             }
@@ -95,7 +108,7 @@ fun ChooseImage(sorteio: androidx.compose.runtime.MutableState<Int>) {
                 Image(
                     painter = painterResource(R.drawable.churrasco),
                     contentDescription = "Churrasco",
-                    modifier = Modifier.size(300.dp)
+                    modifier = Modifier.size(280.dp)
                 )
                 Text("Churrasco", fontSize = 20.sp)
             }
@@ -104,7 +117,7 @@ fun ChooseImage(sorteio: androidx.compose.runtime.MutableState<Int>) {
                 Image(
                     painter = painterResource(R.drawable.hamburguer),
                     contentDescription = "Hamburguer",
-                    modifier = Modifier.size(300.dp)
+                    modifier = Modifier.size(280.dp)
                 )
                 Text("Hamburguer", fontSize = 20.sp)
             }
@@ -113,7 +126,7 @@ fun ChooseImage(sorteio: androidx.compose.runtime.MutableState<Int>) {
                 Image(
                     painter = painterResource(R.drawable.lasanha),
                     contentDescription = "Lasanha",
-                    modifier = Modifier.size(300.dp)
+                    modifier = Modifier.size(280.dp)
                 )
                 Text("Lasanha", fontSize = 20.sp)
             }
@@ -122,7 +135,7 @@ fun ChooseImage(sorteio: androidx.compose.runtime.MutableState<Int>) {
                 Image(
                     painter = painterResource(R.drawable.pastel),
                     contentDescription = "Pastel",
-                    modifier = Modifier.size(300.dp)
+                    modifier = Modifier.size(280.dp)
                 )
                 Text("Pastel", fontSize = 20.sp)
             }
@@ -131,7 +144,7 @@ fun ChooseImage(sorteio: androidx.compose.runtime.MutableState<Int>) {
                 Image(
                     painter = painterResource(R.drawable.pizza),
                     contentDescription = "Pizza",
-                    modifier = Modifier.size(300.dp)
+                    modifier = Modifier.size(280.dp)
                 )
                 Text("Pizza", fontSize = 20.sp)
             }
@@ -140,7 +153,7 @@ fun ChooseImage(sorteio: androidx.compose.runtime.MutableState<Int>) {
                 Image(
                     painter = painterResource(R.drawable.tapioca),
                     contentDescription = "Tapioca",
-                    modifier = Modifier.size(300.dp)
+                    modifier = Modifier.size(280.dp)
                 )
                 Text("Tapioca", fontSize = 20.sp)
             }
@@ -149,7 +162,7 @@ fun ChooseImage(sorteio: androidx.compose.runtime.MutableState<Int>) {
                 Image(
                     painter = painterResource(R.drawable.temaki),
                     contentDescription = "Temaki",
-                    modifier = Modifier.size(300.dp)
+                    modifier = Modifier.size(280.dp)
                 )
                 Text("Temaki", fontSize = 20.sp)
             }
