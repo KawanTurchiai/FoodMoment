@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
@@ -28,8 +29,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             AppcomidaTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Kawan", modifier = Modifier.padding(innerPadding)
+                    App(
+                        name = "Teste", modifier = Modifier.padding(innerPadding)
                     )
                 }
             }
@@ -38,14 +39,14 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
+fun App(name: String, modifier: Modifier = Modifier) {
     val sorteio = remember { mutableStateOf(1) }
 
-    Box(modifier = modifier.fillMaxSize()) {
+    Box(modifier = modifier.fillMaxSize().background(Color.Gray)) {
         Text(
             text = "Roleta de Comida",
 
-            fontSize = 20.sp,
+            fontSize = 28.sp,
             fontWeight = FontWeight.Black,
             modifier = Modifier
                 .align(Alignment.TopCenter)
@@ -64,7 +65,8 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
             Image(
                 painter = painterResource(R.drawable.seta),
                 contentDescription = "seta",
-                modifier = Modifier.size(40.dp),
+                modifier = Modifier.size(70.dp)
+                    .padding(bottom = 30.dp),
 
 
             )
@@ -73,7 +75,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 
             Button(
                 onClick = { sorteio.value = Random.nextInt(1, 9) },
-                modifier = Modifier.padding(top = 20.dp).size(width = 120.dp, height = 40.dp)
+                modifier = Modifier.padding(top = 50.dp).size(width = 120.dp, height = 40.dp)
             ) {
                 Text(text = "Gire",
                     color = Color.White,
@@ -99,72 +101,72 @@ fun ChooseImage(sorteio: androidx.compose.runtime.MutableState<Int>) {
                 Image(
                     painter = painterResource(R.drawable.cachorroquente),
                     contentDescription = "Cachorro Quente",
-                    modifier = Modifier.size(200.dp)
+                    modifier = Modifier.size(250.dp)
                 )
-                Text("Cachorro Quente", fontSize = 15.sp)
+                Text("Cachorro Quente", fontSize = 20.sp)
             }
 
             2 -> {
                 Image(
                     painter = painterResource(R.drawable.churrasco),
                     contentDescription = "Churrasco",
-                    modifier = Modifier.size(200.dp)
+                    modifier = Modifier.size(250.dp)
                 )
-                Text("Churrasco", fontSize = 15.sp)
+                Text("Churrasco", fontSize = 20.sp)
             }
 
             3 -> {
                 Image(
                     painter = painterResource(R.drawable.hamburguer),
                     contentDescription = "Hamburguer",
-                    modifier = Modifier.size(200.dp)
+                    modifier = Modifier.size(250.dp)
                 )
-                Text("Hamburguer", fontSize = 15.sp)
+                Text("Hamburguer", fontSize = 20.sp)
             }
 
             4 -> {
                 Image(
                     painter = painterResource(R.drawable.lasanha),
                     contentDescription = "Lasanha",
-                    modifier = Modifier.size(200.dp)
+                    modifier = Modifier.size(250.dp)
                 )
-                Text("Lasanha", fontSize = 15.sp)
+                Text("Lasanha", fontSize = 20.sp)
             }
 
             5 -> {
                 Image(
                     painter = painterResource(R.drawable.pastel),
                     contentDescription = "Pastel",
-                    modifier = Modifier.size(200.dp)
+                    modifier = Modifier.size(250.dp)
                 )
-                Text("Pastel", fontSize = 15.sp)
+                Text("Pastel", fontSize = 20.sp)
             }
 
             6 -> {
                 Image(
                     painter = painterResource(R.drawable.pizza),
                     contentDescription = "Pizza",
-                    modifier = Modifier.size(200.dp)
+                    modifier = Modifier.size(250.dp)
                 )
-                Text("Pizza", fontSize = 15.sp)
+                Text("Pizza", fontSize = 20.sp)
             }
 
             7 -> {
                 Image(
                     painter = painterResource(R.drawable.tapioca),
                     contentDescription = "Tapioca",
-                    modifier = Modifier.size(200.dp)
+                    modifier = Modifier.size(250.dp)
                 )
-                Text("Tapioca", fontSize = 15.sp)
+                Text("Tapioca", fontSize = 20.sp)
             }
 
             8 -> {
                 Image(
                     painter = painterResource(R.drawable.temaki),
                     contentDescription = "Temaki",
-                    modifier = Modifier.size(200.dp)
+                    modifier = Modifier.size(250.dp)
                 )
-                Text("Temaki", fontSize = 15.sp)
+                Text("Temaki", fontSize = 20.sp)
             }
         }
     }
@@ -174,6 +176,6 @@ fun ChooseImage(sorteio: androidx.compose.runtime.MutableState<Int>) {
 @Composable
 fun GreetingPreview() {
     AppcomidaTheme {
-        Greeting(name = "Kawan")
+        App(name = "Teste")
     }
 }
