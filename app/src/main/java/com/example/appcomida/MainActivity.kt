@@ -7,6 +7,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -22,6 +23,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.appcomida.ui.theme.AppcomidaTheme
 import kotlin.random.Random
+
+
+val backgroud = Color(0xFFF2F0DA)
+val botao = Color(0xFFCB8718)
+val texto = Color(0xFF8F2518)
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,50 +48,60 @@ class MainActivity : ComponentActivity() {
 fun App(name: String, modifier: Modifier = Modifier) {
     val sorteio = remember { mutableStateOf(1) }
 
-    Box(modifier = modifier.fillMaxSize().background(Color.Gray)) {
-        Text(
-            text = "Roleta de Comida",
+    Box(
+        modifier = modifier
+            .fillMaxSize()
+            .background(color = backgroud)
+    ){
+                Text(
+                    text = "Roleta de Comida",
+                    color = texto,
 
-            fontSize = 28.sp,
-            fontWeight = FontWeight.Black,
-            modifier = Modifier
-                .align(Alignment.TopCenter)
-                .padding(top = 30.dp)
-        )
-
-
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(top = 10.dp),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center
-        ) {
-
-            Image(
-                painter = painterResource(R.drawable.seta),
-                contentDescription = "seta",
-                modifier = Modifier.size(70.dp)
-                    .padding(bottom = 30.dp),
-
-
-            )
-            ChooseImage(sorteio)
-
-
-            Button(
-                onClick = { sorteio.value = Random.nextInt(1, 9) },
-                modifier = Modifier.padding(top = 50.dp).size(width = 120.dp, height = 40.dp)
-            ) {
-                Text(text = "Gire",
-                    color = Color.White,
-                    fontSize = 15.sp
-
+                    fontSize = 28.sp,
+                    fontWeight = FontWeight.Black,
+                    modifier = Modifier
+                        .padding(top = 30.dp)
+                        .align(Alignment.TopCenter)
                 )
 
+
+                Column(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(top = 10.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
+                ) {
+
+                    Image(
+                        painter = painterResource(R.drawable.seta),
+                        contentDescription = "seta",
+                        modifier = Modifier
+                            .size(50.dp)
+
+
+
+                        )
+                    ChooseImage(sorteio)
+
+
+                    Button(
+                        colors = ButtonDefaults.buttonColors(botao),
+                        onClick = { sorteio.value = Random.nextInt(1, 9) },
+                        modifier = Modifier
+                            .padding(top = 25.dp)
+                            .size(width = 120.dp, height = 40.dp)
+
+                    ) {
+                        Text(
+                            text = "Sorteio", fontSize = 15.sp, color = backgroud,fontWeight = FontWeight.Black,
+
+
+                        )
+
+                    }
+                }
             }
-        }
-    }
 }
 
 @Composable
@@ -94,7 +110,7 @@ fun ChooseImage(sorteio: androidx.compose.runtime.MutableState<Int>) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
-        modifier = Modifier.padding(2.dp)
+        modifier = Modifier.padding(15.dp)
     ) {
         when (sorteio.value) {
             1 -> {
@@ -103,7 +119,9 @@ fun ChooseImage(sorteio: androidx.compose.runtime.MutableState<Int>) {
                     contentDescription = "Cachorro Quente",
                     modifier = Modifier.size(250.dp)
                 )
-                Text("Cachorro Quente", fontSize = 20.sp)
+                Text("Cachorro Quente", fontSize = 20.sp,modifier = Modifier
+                    .padding(top = 25.dp),color = texto,fontWeight = FontWeight.Black,)
+
             }
 
             2 -> {
@@ -112,7 +130,9 @@ fun ChooseImage(sorteio: androidx.compose.runtime.MutableState<Int>) {
                     contentDescription = "Churrasco",
                     modifier = Modifier.size(250.dp)
                 )
-                Text("Churrasco", fontSize = 20.sp)
+                Text("Churrasco", fontSize = 20.sp,modifier = Modifier
+                    .padding(top = 25.dp),color = texto,fontWeight = FontWeight.Black)
+
             }
 
             3 -> {
@@ -121,7 +141,8 @@ fun ChooseImage(sorteio: androidx.compose.runtime.MutableState<Int>) {
                     contentDescription = "Hamburguer",
                     modifier = Modifier.size(250.dp)
                 )
-                Text("Hamburguer", fontSize = 20.sp)
+                Text("Hamburguer", fontSize = 20.sp,modifier = Modifier
+                    .padding(top = 25.dp),color = texto,fontWeight = FontWeight.Black)
             }
 
             4 -> {
@@ -130,7 +151,8 @@ fun ChooseImage(sorteio: androidx.compose.runtime.MutableState<Int>) {
                     contentDescription = "Lasanha",
                     modifier = Modifier.size(250.dp)
                 )
-                Text("Lasanha", fontSize = 20.sp)
+                Text("Lasanha", fontSize = 20.sp,modifier = Modifier
+                    .padding(top = 25.dp),color = texto,fontWeight = FontWeight.Black)
             }
 
             5 -> {
@@ -139,7 +161,8 @@ fun ChooseImage(sorteio: androidx.compose.runtime.MutableState<Int>) {
                     contentDescription = "Pastel",
                     modifier = Modifier.size(250.dp)
                 )
-                Text("Pastel", fontSize = 20.sp)
+                Text("Pastel", fontSize = 20.sp,modifier = Modifier
+                    .padding(top = 25.dp),color = texto,fontWeight = FontWeight.Black)
             }
 
             6 -> {
@@ -148,7 +171,8 @@ fun ChooseImage(sorteio: androidx.compose.runtime.MutableState<Int>) {
                     contentDescription = "Pizza",
                     modifier = Modifier.size(250.dp)
                 )
-                Text("Pizza", fontSize = 20.sp)
+                Text("Pizza", fontSize = 20.sp,modifier = Modifier
+                    .padding(top = 25.dp),color = texto,fontWeight = FontWeight.Black)
             }
 
             7 -> {
@@ -157,7 +181,8 @@ fun ChooseImage(sorteio: androidx.compose.runtime.MutableState<Int>) {
                     contentDescription = "Tapioca",
                     modifier = Modifier.size(250.dp)
                 )
-                Text("Tapioca", fontSize = 20.sp)
+                Text("Tapioca", fontSize = 20.sp,modifier = Modifier
+                    .padding(top = 25.dp),color = texto,fontWeight = FontWeight.Black)
             }
 
             8 -> {
@@ -166,7 +191,8 @@ fun ChooseImage(sorteio: androidx.compose.runtime.MutableState<Int>) {
                     contentDescription = "Temaki",
                     modifier = Modifier.size(250.dp)
                 )
-                Text("Temaki", fontSize = 20.sp)
+                Text("Temaki", fontSize = 20.sp,modifier = Modifier
+                    .padding(top = 25.dp),color = texto,fontWeight = FontWeight.Black)
             }
         }
     }
